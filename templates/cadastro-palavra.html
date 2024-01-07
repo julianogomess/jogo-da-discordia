@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da discordia</title>
+</head>
+<body>
+    <h1>Jogo da discordia</h1>
+
+    <form action="/cadastrar" method="post">
+        <p>Contagem de palavras: {{ numero_palavras_cadastradas }}</p>
+        <label for="Palavra">Palavra:</label>
+        <input type="text" id="palavra" name="palavra" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

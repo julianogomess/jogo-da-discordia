@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da discordia</title>
+</head>
+<body>
+    <h1>Jogo da discordia</h1>
+    <p id="tempo-restante">Tempo restante: <span id="contador">{{time}}</span> segundos</p>
+
+        <script>
+        // Função para iniciar o contador regressivo
+        function iniciarContador(tempoInicial) {
+            let tempoRestante = tempoInicial;
+            const contadorElemento = document.getElementById('contador');
+
+            function atualizarContador() {
+                contadorElemento.innerText = tempoRestante;
+
+                if (tempoRestante === 0) {
+                    clearInterval(contadorInterval);
+                    alert("Tempo esgotado!");
+                } else {
+                    tempoRestante--;
+                }
+            }
+
+            // Atualizar o contador a cada segundo
+            const contadorInterval = setInterval(atualizarContador, 1000);
+        }
+
+        // Iniciar o contador com um tempo inicial de 10 segundos (pode ser ajustado conforme necessário)
+        iniciarContador(60);
+
+            function enviarFormulario() {
+        // Parâmetros que você deseja passar
+        var palavra = {{palavra1}};
+        var tempo = document.getElementById('contador');;
+
+        // Construa a URL com os parâmetros de consulta
+        var url = "/submit?palavra=" + encodeURIComponent(palavra) + "&tempo=" + encodeURIComponent(tempo);
+
+        // Redireciona para a URL construída
+        window.location.href = url;
+        }
+    </script>
+
+    <form method="post">
+        <label>{{palavra1}}</label>
+        <button type="button" onclick="enviarFormulario()"> Acertaram</button>
+    </form>
+</body>
+</html>

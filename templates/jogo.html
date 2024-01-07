@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da discordia</title>
+</head>
+<body>
+    <h1>Jogo da discordia</h1>
+    <h2>Pontuação do Jogo</h2>
+
+    <p> {{time_da_vez}}</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Time A</th>
+                <th>Time B</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="pontos-time-a">{{ pontos_time_a}}</td>
+                <td id="pontos-time-b">{{ pontos_time_b}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h2>Começar level</h2>
+    <form action="/começar-level" method="get">
+        <button type="submit">Iniciar</button>
+    </form>
+
+
+</body>
+</html>
